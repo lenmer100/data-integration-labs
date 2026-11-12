@@ -14,7 +14,7 @@ Ich habe mir **pandas** angesehen ([pandas-dev/pandas](https://github.com/pandas
 | --- | --- | --- |
 | [pandas-dev/pandas](https://api.github.com/repos/pandas-dev/pandas) | `BSD-3-Clause` | GitHub hat die `LICENSE`-Datei gelesen und eindeutig als BSD 3-Clause erkannt. |
 | [owid/co2-data](https://api.github.com/repos/owid/co2-data) | `null` (das ganze Feld `license` ist `null`) | Das Repo hat keine Lizenzdatei, die Dateien sind nur `.gitignore`, `README.md`, `owid-co2-codebook.csv` und `owid-co2-data.csv`. Die Lizenz (CC BY 4.0) steht nur als Satz im [README](https://github.com/owid/co2-data#license), und den kann eine Maschine nicht lesen. |
-| [lenmer100/data-integration-labs](https://api.github.com/repos/lenmer100/data-integration-labs) | noch nicht abrufbar | Am 12.11.2026 antwortete die API mit `Not Found`, weil das Repo noch nicht veröffentlicht war. Mit der MIT-`LICENSE`, die ich hineinlege, sollte dort `MIT` stehen. <!-- TODO nach dem Veröffentlichen: Link öffnen und den echten Wert eintragen --> |
+| [lenmer100/data-integration-labs](https://api.github.com/repos/lenmer100/data-integration-labs) | `MIT` | GitHub hat die `LICENSE`-Datei gelesen und als MIT erkannt (abgerufen am 12.11.2026 nach dem Veröffentlichen). |
 
 ## Community-Dateien
 
