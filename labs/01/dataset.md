@@ -14,7 +14,7 @@
 
 Ich bin im Team **Bahn & Wetter** ([dis-bahn-wetter/bahn-wetter](https://github.com/dis-bahn-wetter/bahn-wetter)). Unsere Frage ist, ob die Bahn in Köln bei Regen, Sturm oder Hitze unpünktlicher ist. Tommy profiliert die DB-Verspätungen, Paul das DWD-Wetter. Ich habe die Feiertage übernommen. Sie sind für uns eher eine Kontrollvariable: An Feiertagen fahren weniger Züge und weniger Leute, und das könnte einen Wettereffekt überdecken oder vortäuschen.
 
-Abgerufen und ausgewertet habe ich alles am **10.11.2026**. Am 12.11.2026 habe ich die wichtigsten Angaben noch einmal live nachgeprüft (Wikipedia-Version und Lizenz, Trefferzahlen von GovData und Open.NRW, Statistiken der CSVs): alles unverändert. Das Skript dazu liegt in [`feiertage/get_feiertage.py`](feiertage/get_feiertage.py).
+Abgerufen und ausgewertet habe ich alles am **10.11.2026**. Am 12.11.2026 habe ich die wichtigsten Angaben noch einmal live nachgeprüft (Wikipedia-Version und Lizenz, Trefferzahlen von GovData und Open.NRW, Statistiken der CSVs): alles unverändert. Ebenfalls am 12.11.2026 habe ich die Heimspiele des 1. FC Köln aus OpenLigaDB wieder entfernt (ODbL ist mit CC BY-SA in einer gemeinsamen Tabelle nicht sauber kombinierbar). Das Skript dazu liegt in [`feiertage/get_feiertage.py`](feiertage/get_feiertage.py).
 
 ## Task 5 · Datensatz finden
 
@@ -50,7 +50,7 @@ Witzig fand ich, dass es derselbe Datensatz ist, GovData ihn von Open.NRW übern
 
 - **Hauptquelle:** Wikipedia-Artikel [Feiertag (Deutschland)](https://de.wikipedia.org/wiki/Feiertag_(Deutschland)), Abschnitte *Übersicht aller gesetzlichen Feiertage* und *Kalendarische Daten → Bewegliche Feiertage*. Der Link aus unserem Team-Chat, [Gesetzliche Feiertage in Deutschland](https://de.wikipedia.org/wiki/Gesetzliche_Feiertage_in_Deutschland), ist inzwischen nur noch eine Weiterleitung auf diesen Artikel. Ich arbeite mit der Version [271794065 vom 01.11.2026](https://de.wikipedia.org/w/index.php?oldid=271794065).
 - **Warum:** Die Seite enthält alle 16 Bundesländer in einer Tabelle und unterscheidet *landesweit* und *regional*. Die Termine der beweglichen Feiertage stehen dort für 2025 bis 2035. Die Lizenz ist offen (CC BY-SA 4.0), und alles lässt sich über die MediaWiki-API ohne Login abrufen. Die originalen Herausgeber der Regeln sind die Landesgesetzgeber, und Wikipedia verlinkt deren Gesetze in den Einzelnachweisen.
-- **Zusatzquellen** für unsere Frage (siehe Task 8): NRW-Schulferien vom Schulministerium, Heimspiele des 1. FC Köln aus OpenLigaDB und die Kölner Karnevalstage.
+- **Zusatzquellen** für unsere Frage (siehe Task 8): NRW-Schulferien vom Schulministerium und die Kölner Karnevalstage (vom Aschermittwoch in der Wikipedia-Tabelle abgeleitet). Heimspiele des 1. FC Köln aus OpenLigaDB habe ich geprüft, aber wegen der ODbL-Lizenz nicht in den Datensatz aufgenommen.
 
 ## Task 6 · Profil
 
@@ -63,8 +63,8 @@ Daraus habe ich mit dem Skript diese Dateien gebaut (alle UTF-8, Trennzeichen Ko
 | Datei | Zeilen | Spalten | Inhalt |
 | --- | --- | --- | --- |
 | [`feiertage_de_2024-2027.csv`](feiertage/feiertage_de_2024-2027.csv) | 70 | 12 | jeder gesetzliche Feiertag in mindestens einem Land, 08.08.2024 bis 26.12.2027 |
-| [`kalender_koeln_2024-07-01_2027-12-31.csv`](feiertage/kalender_koeln_2024-07-01_2027-12-31.csv) | 1.279 | 16 | **ein Eintrag pro Tag** vom 01.07.2024 bis 31.12.2027, die Tabelle für den Join |
-| [`events_koeln_2024-2027.csv`](feiertage/events_koeln_2024-2027.csv) | 67 | 9 | 16 Karnevalstage und 51 FC-Heimspiele |
+| [`kalender_koeln_2024-07-01_2027-12-31.csv`](feiertage/kalender_koeln_2024-07-01_2027-12-31.csv) | 1.279 | 13 | **ein Eintrag pro Tag** vom 01.07.2024 bis 31.12.2027, die Tabelle für den Join |
+| [`events_koeln_2024-2027.csv`](feiertage/events_koeln_2024-2027.csv) | 16 | 7 | 16 Kölner Karnevalstage |
 | [`schulferien_nrw_2024-2027.csv`](feiertage/schulferien_nrw_2024-2027.csv) | 18 | 5 | Ferienzeiträume NRW, Schuljahre 2024/25 bis 2027/28 |
 
 Der Kalender beginnt am 01.07.2024, weil die DB-Daten von piebro mit `data-2024-07.parquet` anfangen. Die letzte DB-Datei ist im Moment `data-2026-10.parquet`. 2027 habe ich trotzdem mitgenommen, damit wir nicht neu scrapen müssen, falls neue Monate dazukommen.
@@ -124,7 +124,6 @@ Wikipedia dokumentiert die Tabelle nur über die Legende (Farben) und die Anmerk
 | `ist_brueckentag_nrw` | Werktag zwischen einem NRW-Feiertag und dem Wochenende | boolean | `True` am `2025-05-02` |
 | `ist_schulferien_nrw` / `schulferien_nrw` | Tag liegt in NRW-Schulferien / Name der Ferien | boolean / Text | `True` / `Osterferien` |
 | `ist_karneval_koeln` / `karneval_koeln` | Kölner Karnevalstag (kein Feiertag) | boolean / Text | `True` / `Rosenmontag` |
-| `ist_fc_heimspiel` / `fc_anstoss` / `fc_gegner` | Heimspiel des 1. FC Köln im RheinEnergieStadion | boolean / Uhrzeit Ortszeit / Text | `True` / `15:30` / `FC St. Pauli` |
 
 Die Tabelle `feiertage_de_2024-2027.csv` hat zusätzlich `geltung` (`bundesweit`/`regional`), `laender_landesweit` und `laender_teilweise` (Kürzel mit `;` getrennt, z. B. `BW;BY;HE;NW;RP;SL`), `is_nrw`, `typ` (`fest`/`beweglich`), `datum_quelle` (`wikipedia` oder `berechnet`) und `wiki_revid`, damit man sieht, aus welcher Wikipedia-Version eine Zeile stammt.
 
@@ -178,8 +177,7 @@ Die wichtigste zweite Quelle ist für uns die **DB-Verspätung**: [piebro/deutsc
 | Quelle | wofür | Lizenz |
 | --- | --- | --- |
 | [Schulferien NRW](https://www.govdata.de/suche/daten/schulferien-nrw55d5d), Ministerium für Schule und Bildung NRW ([CSV](https://www.schulministerium.nrw.de/BiPo/OpenData/Schuldaten/Schulferien/OpenData_Ferientermine.csv)) | Ferienspalten im Kalender | Datenlizenz Deutschland – Namensnennung – 2.0 |
-| [OpenHolidays API](https://openholidaysapi.org) | nur Abgleich der Schulferien | ODbL 1.0 |
-| [OpenLigaDB](https://www.openligadb.de) | Heimspiele 1. FC Köln (2. Liga 2024/25, Bundesliga 2025/26 und 2026/27) | ODbL 1.0 ([Lizenz](https://www.openligadb.de/lizenz)) |
+| [OpenHolidays API](https://openholidaysapi.org) | nur Abgleich der Schulferien, nichts daraus veröffentlicht | ODbL 1.0 |
 | Python-Paket [`holidays`](https://github.com/vacanza/holidays) 0.108 und [feiertage-api.de](https://feiertage-api.de) | nur Abgleich der Feiertage | MIT bzw. nicht angegeben (ich veröffentliche nichts daraus) |
 
 ### Gemeinsamer Schlüssel
@@ -221,7 +219,7 @@ Die beiden Feiertage sind die pünktlichsten Donnerstage des Monats. Genau desha
 ### Forschungsfragen (nur mit beiden Quellen beantwortbar)
 
 1. Bleibt der Zusammenhang zwischen Regen und Verspätung in Köln Hbf bestehen, wenn man Feiertage, Brückentage und Schulferien herausrechnet oder nur gleiche Tagtypen vergleicht?
-2. Sind Züge an Kölner Großereignistagen (Weiberfastnacht, Rosenmontag, 11.11., FC-Heimspiele) unpünktlicher, und kommt bei schlechtem Wetter an solchen Tagen noch etwas dazu?
+2. Sind Züge an Kölner Karnevalstagen (Weiberfastnacht, Rosenmontag, 11.11.) unpünktlicher, und kommt bei schlechtem Wetter an solchen Tagen noch etwas dazu?
 3. Wirkt sich ein Feiertag nur in *anderen* Bundesländern (z. B. Reformationstag am 31.10., `anzahl_laender_mit_feiertag` = 9, aber in NRW ein Werktag) auf die Pünktlichkeit in Köln aus, z. B. über den Fernverkehr?
 
 ### Lizenzen beim Kombinieren
@@ -229,7 +227,7 @@ Die beiden Feiertage sind die pünktlichsten Donnerstage des Monats. Genau desha
 - DB (CC BY 4.0) und DWD (CC BY 4.0) lassen sich problemlos zusammen veröffentlichen, wenn wir beide nennen.
 - Sobald die Wikipedia-Feiertagsspalten drin sind, wird es CC BY-SA 4.0. CC BY-Daten dürfen in ein CC BY-SA-Werk, umgekehrt geht es nicht. Der kombinierte Datensatz sollte also **CC BY-SA 4.0** sein, mit Nennung von DB/piebro, DWD und Wikipedia.
 - Schulferien (dl-de/by-2-0): Wir müssen das Ministerium, die Lizenz und den Link nennen und angeben, dass wir die Daten verändert haben. Mit CC BY-SA sollte das vereinbar sein, weil dl-de/by nur Namensnennung verlangt.
-- **Offene Frage:** Die FC-Spiele kommen aus OpenLigaDB unter **ODbL**, die selbst Share-Alike ist. ODbL und CC BY-SA in *einer* Datenbank zu mischen ist laut allem, was ich gelesen habe, nicht sauber geregelt. Die FC-Spalten würde ich deshalb in einer eigenen Datei lassen (`events_koeln_…csv`, ODbL) oder im Team besprechen, ob wir sie überhaupt brauchen.
+- Heimspiele des 1. FC Köln aus OpenLigaDB (ODbL 1.0) habe ich **nicht aufgenommen**. ODbL und CC BY-SA sind beide Share-Alike und in einer gemeinsamen Tabelle nicht sauber kombinierbar.
 
 Namensnennungen der Zusatzquellen:
 
@@ -237,8 +235,6 @@ Namensnennungen der Zusatzquellen:
 >
 
 > *Schulferien NRW*, Ministerium für Schule und Bildung des Landes Nordrhein-Westfalen, https://www.govdata.de/suche/daten/schulferien-nrw55d5d, [Datenlizenz Deutschland – Namensnennung – 2.0](https://www.govdata.de/dl-de/by-2-0). Gefiltert auf 2024 bis 2027 und in Tageswerte umgewandelt.
->
-> Spieldaten 1. FC Köln, [OpenLigaDB](https://www.openligadb.de), lizenziert unter [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/). Auf Heimspiele gefiltert.
 
 ### Nächste Schritte
 
@@ -246,7 +242,6 @@ Namensnennungen der Zusatzquellen:
 flowchart LR
     W[Wikipedia API<br/>Feiertag Deutschland] --> P[get_feiertage.py<br/>Farben + Zelltexte parsen]
     S[Schulministerium NRW<br/>Ferien-CSV] --> P
-    O[OpenLigaDB<br/>FC-Heimspiele] --> P
     H[holidays-Paket +<br/>feiertage-api.de] -. Abgleich .-> P
     P --> K[kalender_koeln.csv<br/>1 Zeile pro Tag]
     DB[DB piebro<br/>Parquet, Ortszeit] --> A[pro Stunde<br/>aggregieren]
@@ -264,7 +259,7 @@ flowchart LR
 
 ### Fazit
 
-Ja, ich würde die Feiertage auf jeden Fall in unser Projekt aufnehmen. Sie sind klein, sauber und schnell gebaut, und schon der kurze Test im Mai 2025 zeigt, dass Feiertage die Pünktlichkeit spürbar verändern. Das größte Risiko ist nicht die Feiertagsliste selbst (drei Quellen stimmen für NRW zu 100 % überein), sondern die Lizenzfrage beim Mischen von CC BY-SA und ODbL und dass sich die Wikipedia-Tabelle jederzeit ändern kann. Deshalb speichere ich die Versions-ID in jeder Zeile.
+Ja, ich würde die Feiertage auf jeden Fall in unser Projekt aufnehmen. Sie sind klein, sauber und schnell gebaut, und schon der kurze Test im Mai 2025 zeigt, dass Feiertage die Pünktlichkeit spürbar verändern. OpenLigaDB habe ich wegen der ODbL-Lizenz weggelassen. Das größte verbleibende Risiko ist, dass sich die Wikipedia-Tabelle jederzeit ändern kann. Deshalb speichere ich die Versions-ID in jeder Zeile.
 
 ## Qualitätschecks, die ich wirklich gemacht habe
 
@@ -282,9 +277,8 @@ Alle Zahlen stammen aus der Ausgabe von `get_feiertage.py` vom 10.11.2026 (`run_
 | Brückentage NRW | 10, alle an Freitagen (z. B. 02.05.2025, 15.05.2026) |
 | Schulferien: Schulministerium gegen OpenHolidays | 18 Zeiträume, identisch. Außerhalb unseres Zeitraums steht beim Ministerium für Ostern 2023 aber `03.03.2023` als erster Tag, OpenHolidays sagt `2023-04-03`. Das ist wohl ein Tippfehler in der offiziellen Datei |
 | Ferien-CSV technisch | erste Zeile `sep=;` (ein Hinweis für Excel) und ein Semikolon am Zeilenende. pandas hat dadurch die erste Spalte zum Index gemacht, und alle Spalten waren um eins verschoben, bis ich `skiprows=1, index_col=False` gesetzt habe |
-| FC-Heimspiele | 51 (je 17 pro Saison). 12 davon sind noch nicht gespielt (ab 28.11.2026). Bei denen steht oft der Platzhalter 15:30, die Anstoßzeit kann sich also noch ändern |
 
-Für den DB-Zeitraum (01.07.2024 bis 31.10.2026, 853 Tage) heißt das: 23 NRW-Feiertage, 8 Brückentage, 232 Schulferientage, 10 Karnevalstage und 38 FC-Heimspieltage.
+Für den DB-Zeitraum (01.07.2024 bis 31.10.2026, 853 Tage) heißt das: 23 NRW-Feiertage, 8 Brückentage, 232 Schulferientage und 10 Karnevalstage.
 
 ## Grenzen
 
@@ -297,10 +291,9 @@ Für den DB-Zeitraum (01.07.2024 bis 31.10.2026, 853 Tage) heißt das: 23 NRW-Fe
 
 ## Offene Fragen
 
-1. Nehmen wir die FC-Heimspiele (ODbL) überhaupt in den gemeinsamen Datensatz, oder bleiben sie getrennt?
-2. Wollen wir nur Köln Hbf betrachten oder auch Köln Messe/Deutz? Bei Messen und Spielen im Stadion wäre Deutz eigentlich spannender.
-3. Woher kommt der Sprung bei der Zahl der Halte ab Mitte Mai 2025 (Frage an Tommy)?
-4. Brauchen wir eine eigene Spalte für Silvester und Heiligabend? Beide sind keine Feiertage, aber der Verkehr ist dort sehr anders.
+1. Wollen wir nur Köln Hbf betrachten oder auch Köln Messe/Deutz? Bei Messen wäre Deutz eigentlich spannender.
+2. Woher kommt der Sprung bei der Zahl der Halte ab Mitte Mai 2025 (Frage an Tommy)?
+3. Brauchen wir eine eigene Spalte für Silvester und Heiligabend? Beide sind keine Feiertage, aber der Verkehr ist dort sehr anders.
 
 ## Verwendete Werkzeuge
 

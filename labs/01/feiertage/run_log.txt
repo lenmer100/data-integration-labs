@@ -15,5 +15,5 @@ Abgleich NRW: holidays-Paket 37 Tage, feiertage-api.de 37 Tage, Wikipedia 37 Tag
    - holidays-Paket HE weicht ab: 2027-05-16 (nur Wikipedia)
 Kalender: 1279 Zeilen (2024-07-01 bis 2027-12-31), Lücken: 0, Duplikate: 0
   NRW-Feiertage: 37, davon am Wochenende: 8, Brückentage: 10
-  Schulferientage NRW: 328, Karnevalstage: 16, FC-Heimspieltage: 51 (davon noch nicht gespielt: 12)
-Events: 67 Zeilen, Schulferien: 18 Zeiträume, Abweichungen Schulministerium vs. OpenHolidays: keine
+  Schulferientage NRW: 328, Karnevalstage: 16
+Events: 16 Zeilen (nur Karnevalstage; FC-Heimspiele aus OpenLigaDB bewusst weggelassen, ODbL), Schulferien: 18 Zeiträume, Abweichungen Schulministerium vs. OpenHolidays: keine

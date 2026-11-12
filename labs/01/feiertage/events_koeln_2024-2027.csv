@@ -1,68 +1,17 @@
-datum,name,kategorie,uhrzeit,ort,liga,ist_gesetzlicher_feiertag,beendet,quelle
-2024-08-02,Heimspiel 1. FC Köln – Hamburger SV,fussball,20:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72124
-2024-08-24,Heimspiel 1. FC Köln – Eintracht Braunschweig,fussball,20:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72142
-2024-09-14,Heimspiel 1. FC Köln – 1. FC Magdeburg,fussball,20:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72160
-2024-09-29,Heimspiel 1. FC Köln – Karlsruher SC,fussball,13:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72178
-2024-10-05,Heimspiel 1. FC Köln – SSV Ulm 1846,fussball,13:00,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72187
-2024-10-25,Heimspiel 1. FC Köln – SC Paderborn 07,fussball,18:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72205
-2024-11-09,Heimspiel 1. FC Köln – SpVgg Greuther Fürth,fussball,13:00,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72529
-2024-11-11,Sessionseröffnung (11.11.),karneval,11:11,Köln,,False,,festes Datum
-2024-11-30,Heimspiel 1. FC Köln – Hannover 96,fussball,13:00,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72547
-2024-12-15,Heimspiel 1. FC Köln – 1. FC Nürnberg,fussball,13:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72565
-2025-01-25,Heimspiel 1. FC Köln – SV 07 Elversberg,fussball,13:00,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72592
-2025-02-09,Heimspiel 1. FC Köln – FC Schalke 04,fussball,13:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72610
-2025-02-23,Heimspiel 1. FC Köln – Fortuna Düsseldorf,fussball,13:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72628
-2025-02-27,Weiberfastnacht,karneval,,Köln,,False,,wikipedia (Aschermittwoch)
-2025-03-02,Karnevalssonntag,karneval,,Köln,,False,,wikipedia (Aschermittwoch)
-2025-03-03,Rosenmontag,karneval,,Köln,,False,,wikipedia (Aschermittwoch)
-2025-03-04,Veilchendienstag,karneval,,Köln,,False,,wikipedia (Aschermittwoch)
-2025-03-15,Heimspiel 1. FC Köln – SV Darmstadt 98,fussball,20:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72655
-2025-04-05,Heimspiel 1. FC Köln – Hertha BSC,fussball,20:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72673
-2025-04-20,Heimspiel 1. FC Köln – Preußen Münster,fussball,13:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72691
-2025-05-03,Heimspiel 1. FC Köln – Jahn Regensburg,fussball,20:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72709
-2025-05-18,Heimspiel 1. FC Köln – 1. FC Kaiserslautern,fussball,15:30,RheinEnergieStadion,bl2/2024,False,True,OpenLigaDB match 72727
-2025-08-31,Heimspiel 1. FC Köln – SC Freiburg,fussball,19:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77272
-2025-09-28,Heimspiel 1. FC Köln – VfB Stuttgart,fussball,17:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77300
-2025-10-18,Heimspiel 1. FC Köln – FC Augsburg,fussball,15:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77318
-2025-11-02,Heimspiel 1. FC Köln – Hamburger SV,fussball,15:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77336
-2025-11-11,Sessionseröffnung (11.11.),karneval,11:11,Köln,,False,,festes Datum
-2025-11-22,Heimspiel 1. FC Köln – Eintracht Frankfurt,fussball,18:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77354
-2025-12-06,Heimspiel 1. FC Köln – FC St. Pauli,fussball,15:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77371
-2025-12-20,Heimspiel 1. FC Köln – 1. FC Union Berlin,fussball,15:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77389
-2026-01-14,Heimspiel 1. FC Köln – FC Bayern München,fussball,20:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77408
-2026-01-17,Heimspiel 1. FC Köln – 1. FSV Mainz 05,fussball,15:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77417
-2026-01-30,Heimspiel 1. FC Köln – VfL Wolfsburg,fussball,20:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77435
-2026-02-08,Heimspiel 1. FC Köln – RB Leipzig,fussball,15:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77445
-2026-02-12,Weiberfastnacht,karneval,,Köln,,False,,wikipedia (Aschermittwoch)
-2026-02-15,Karnevalssonntag,karneval,,Köln,,False,,wikipedia (Aschermittwoch)
-2026-02-16,Rosenmontag,karneval,,Köln,,False,,wikipedia (Aschermittwoch)
-2026-02-17,Veilchendienstag,karneval,,Köln,,False,,wikipedia (Aschermittwoch)
-2026-02-21,Heimspiel 1. FC Köln – TSG Hoffenheim,fussball,15:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77463
-2026-03-07,Heimspiel 1. FC Köln – Borussia Dortmund,fussball,18:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77481
-2026-03-21,Heimspiel 1. FC Köln – Borussia Mönchengladbach,fussball,15:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77499
-2026-04-12,Heimspiel 1. FC Köln – SV Werder Bremen,fussball,15:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77517
-2026-04-25,Heimspiel 1. FC Köln – Bayer 04 Leverkusen,fussball,15:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77534
-2026-05-10,Heimspiel 1. FC Köln – 1. FC Heidenheim 1846,fussball,17:30,RheinEnergieStadion,bl1/2025,False,True,OpenLigaDB match 77552
-2026-08-29,Heimspiel 1. FC Köln – TSG Hoffenheim,fussball,15:30,RheinEnergieStadion,bl1/2026,False,True,OpenLigaDB match 83163
-2026-09-12,Heimspiel 1. FC Köln – SV Werder Bremen,fussball,18:30,RheinEnergieStadion,bl1/2026,False,True,OpenLigaDB match 83181
-2026-10-11,Heimspiel 1. FC Köln – Borussia Mönchengladbach,fussball,15:30,RheinEnergieStadion,bl1/2026,False,True,OpenLigaDB match 83199
-2026-10-24,Heimspiel 1. FC Köln – FC Schalke 04,fussball,15:30,RheinEnergieStadion,bl1/2026,False,True,OpenLigaDB match 83217
-2026-11-08,Heimspiel 1. FC Köln – Bayer 04 Leverkusen,fussball,15:30,RheinEnergieStadion,bl1/2026,False,True,OpenLigaDB match 83235
-2026-11-11,Sessionseröffnung (11.11.),karneval,11:11,Köln,,False,,festes Datum
-2026-11-28,Heimspiel 1. FC Köln – SV 07 Elversberg,fussball,15:30,RheinEnergieStadion,bl1/2026,False,False,OpenLigaDB match 83252
-2026-12-12,Heimspiel 1. FC Köln – RB Leipzig,fussball,15:30,RheinEnergieStadion,bl1/2026,False,False,OpenLigaDB match 83270
-2027-01-09,Heimspiel 1. FC Köln – SC Freiburg,fussball,15:30,RheinEnergieStadion,bl1/2026,False,False,OpenLigaDB match 83288
-2027-01-12,Heimspiel 1. FC Köln – Borussia Dortmund,fussball,20:30,RheinEnergieStadion,bl1/2026,False,False,OpenLigaDB match 83297
-2027-01-30,Heimspiel 1. FC Köln – VfB Stuttgart,fussball,15:30,RheinEnergieStadion,bl1/2026,False,False,OpenLigaDB match 83325
-2027-02-04,Weiberfastnacht,karneval,,Köln,,False,,wikipedia (Aschermittwoch)
-2027-02-07,Karnevalssonntag,karneval,,Köln,,False,,wikipedia (Aschermittwoch)
-2027-02-08,Rosenmontag,karneval,,Köln,,False,,wikipedia (Aschermittwoch)
-2027-02-09,Veilchendienstag,karneval,,Köln,,False,,wikipedia (Aschermittwoch)
-2027-02-13,Heimspiel 1. FC Köln – Hamburger SV,fussball,15:30,RheinEnergieStadion,bl1/2026,False,False,OpenLigaDB match 83343
-2027-02-27,Heimspiel 1. FC Köln – Eintracht Frankfurt,fussball,15:30,RheinEnergieStadion,bl1/2026,False,False,OpenLigaDB match 83361
-2027-03-06,Heimspiel 1. FC Köln – 1. FC Union Berlin,fussball,15:30,RheinEnergieStadion,bl1/2026,False,False,OpenLigaDB match 83379
-2027-03-20,Heimspiel 1. FC Köln – FC Bayern München,fussball,15:30,RheinEnergieStadion,bl1/2026,False,False,OpenLigaDB match 83397
-2027-04-10,Heimspiel 1. FC Köln – FC Augsburg,fussball,15:30,RheinEnergieStadion,bl1/2026,False,False,OpenLigaDB match 83414
-2027-04-24,Heimspiel 1. FC Köln – 1. FSV Mainz 05,fussball,15:30,RheinEnergieStadion,bl1/2026,False,False,OpenLigaDB match 83432
-2027-05-22,Heimspiel 1. FC Köln – SC Paderborn 07,fussball,15:30,RheinEnergieStadion,bl1/2026,False,False,OpenLigaDB match 83459
-2027-11-11,Sessionseröffnung (11.11.),karneval,11:11,Köln,,False,,festes Datum
+datum,name,kategorie,uhrzeit,ort,ist_gesetzlicher_feiertag,quelle
+2024-11-11,Sessionseröffnung (11.11.),karneval,11:11,Köln,False,festes Datum
+2025-02-27,Weiberfastnacht,karneval,,Köln,False,wikipedia (Aschermittwoch)
+2025-03-02,Karnevalssonntag,karneval,,Köln,False,wikipedia (Aschermittwoch)
+2025-03-03,Rosenmontag,karneval,,Köln,False,wikipedia (Aschermittwoch)
+2025-03-04,Veilchendienstag,karneval,,Köln,False,wikipedia (Aschermittwoch)
+2025-11-11,Sessionseröffnung (11.11.),karneval,11:11,Köln,False,festes Datum
+2026-02-12,Weiberfastnacht,karneval,,Köln,False,wikipedia (Aschermittwoch)
+2026-02-15,Karnevalssonntag,karneval,,Köln,False,wikipedia (Aschermittwoch)
+2026-02-16,Rosenmontag,karneval,,Köln,False,wikipedia (Aschermittwoch)
+2026-02-17,Veilchendienstag,karneval,,Köln,False,wikipedia (Aschermittwoch)
+2026-11-11,Sessionseröffnung (11.11.),karneval,11:11,Köln,False,festes Datum
+2027-02-04,Weiberfastnacht,karneval,,Köln,False,wikipedia (Aschermittwoch)
+2027-02-07,Karnevalssonntag,karneval,,Köln,False,wikipedia (Aschermittwoch)
+2027-02-08,Rosenmontag,karneval,,Köln,False,wikipedia (Aschermittwoch)
+2027-02-09,Veilchendienstag,karneval,,Köln,False,wikipedia (Aschermittwoch)
+2027-11-11,Sessionseröffnung (11.11.),karneval,11:11,Köln,False,festes Datum

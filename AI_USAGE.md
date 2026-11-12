@@ -9,7 +9,7 @@ Werkzeug in allen Einträgen: **Grok Bot**, ein KI-Assistent mit Zugriff auf ein
 ## 10.11.2026 · Lab 1, Tasks 5–8 (`dataset.md`, `feiertage/`)
 
 - **Prompt (sinngemäß):** „Hilf mir, die Feiertage für Köln/NRW aus Wikipedia als CSV zu bauen, mit anderen Quellen abzugleichen und daraus mein dataset.md zu schreiben.“
-- **Übernommen:** `get_feiertage.py` (Parsen der Wikipedia-Tabelle samt Hintergrundfarben, Abgleich mit dem Paket `holidays` und feiertage-api.de, Schulferien, FC-Heimspiele, Kalendertabelle), Gliederung und erste Fassung des Profils, der kurze Join-Test `probe_join.py`.
+- **Übernommen:** `get_feiertage.py` (Parsen der Wikipedia-Tabelle samt Hintergrundfarben, Abgleich mit dem Paket `holidays` und feiertage-api.de, Schulferien, Kalendertabelle (ohne FC-Heimspiele)), Gliederung und erste Fassung des Profils, der kurze Join-Test `probe_join.py`.
 - **Geändert / verworfen:** <!-- TODO Lennart -->
 - **Wie geprüft:** Das Skript gleicht drei Quellen automatisch ab (NRW: 37/37/37 Feiertage, keine Abweichung) und listet jede Abweichung auf (6 Tage in Hessen). <!-- TODO Lennart: eigene Stichproben, z. B. NRW-Feiertage 2026 gegen das FTG NW -->
 
@@ -56,3 +56,10 @@ Werkzeug in allen Einträgen: **Grok Bot**, ein KI-Assistent mit Zugriff auf ein
 - **Geändert / verworfen:** <!-- TODO Lennart -->
 - **Wie geprüft:** <!-- TODO Lennart: git log --oneline -- labs/03 und git status selbst laufen lassen, conflict.md mit der Datei vergleichen -->
 - **Nicht mit KI:** Task 2 (Klonen, Push, Setup-Fragen in `git.md`) und Task 7 (Issue, Pull Request, Review im Team-Repo) mache ich selbst. <!-- TODO Lennart: nur stehen lassen, wenn es stimmt -->
+
+## 12.11.2026 · FC-Spalten entfernt und Abgabe vorbereitet
+
+- **Prompt (sinngemäß):** „Mach die Git-Aufgabe fertig, nimm die FC-Heimspiele wegen der ODbL-Lizenz raus, und veröffentliche das vorbereitete Lab-Repo und die Feiertags-Zeile im Team-Repo.“
+- **Übernommen:** Entfernen der OpenLigaDB-Daten (Spalten `ist_fc_heimspiel`, `fc_anstoss`, `fc_gegner` und die 51 Heimspiel-Zeilen) aus Skript, CSVs und `dataset.md`; Anpassen der Feiertags-Zeile an das README-Format des Team-Repos; Anlegen der öffentlichen Repos und des Pull Requests.
+- **Geändert / verworfen:** Die vorbereitete Schulferien-Zeile im Team-README habe ich nicht eingereicht, weil Robel die Schulferien in Issue #5 übernimmt. Die FC-Daten sind nicht mehr im Repo.
+- **Wie geprüft:** Spalten und Dateien nach der Änderung durchsucht (keine OpenLigaDB-Daten mehr in den CSVs); Zeilen- und Spaltenzahlen in `dataset.md` an die neuen Dateien angepasst; Team-Branch auf den aktuellen `main` gesetzt.

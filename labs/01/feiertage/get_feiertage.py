@@ -5,8 +5,10 @@ Hauptquelle: Wikipedia, Artikel "Feiertag (Deutschland)" (früher "Gesetzliche
 Feiertage in Deutschland", der alte Titel leitet dorthin weiter), CC BY-SA 4.0.
 Abgleich:    Python-Paket `holidays` und https://feiertage-api.de
 Zusätzlich:  NRW-Schulferien (Schulministerium NRW, dl-de/by-2-0; Abgleich OpenHolidays API),
-             Heimspiele 1. FC Köln (OpenLigaDB, ODbL 1.0),
              Kölner Karnevalstage (aus Aschermittwoch abgeleitet, keine Feiertage).
+             Heimspiele des 1. FC Köln (OpenLigaDB, ODbL 1.0) werden bewusst nicht
+             eingelesen: ODbL und CC BY-SA sind beide Share-Alike und lassen sich
+             in einer gemeinsamen Tabelle nicht sauber mischen.
 
 Aufruf: python3 get_feiertage.py
 Ergebnis: siehe OUT_* unten, Rohdaten in raw/.
@@ -276,23 +278,6 @@ def fetch_schulferien():
     return f, sorted(msb ^ oh)
 
 
-def fetch_fc_heimspiele():
-    rows = []
-    for liga, saison in [("bl2", 2024), ("bl1", 2025), ("bl1", 2026)]:
-        j = get_json(f"https://api.openligadb.de/getmatchdata/{liga}/{saison}",
-                     out=f"openligadb_{liga}_{saison}.json")
-        for m in j:
-            if m["team1"]["teamName"] != "1. FC Köln":
-                continue
-            t = datetime.fromisoformat(m["matchDateTime"])
-            rows.append({"datum": t.date().isoformat(), "name": f"Heimspiel 1. FC Köln – {m['team2']['teamName']}",
-                         "kategorie": "fussball", "uhrzeit": t.strftime("%H:%M"),
-                         "ort": "RheinEnergieStadion", "liga": f"{liga}/{saison}",
-                         "ist_gesetzlicher_feiertag": False, "beendet": m["matchIsFinished"],
-                         "quelle": f"OpenLigaDB match {m['matchID']}"})
-    return pd.DataFrame(rows)
-
-
 def karneval(wiki_dates):
     rows = []
     for y in YEARS:
@@ -301,11 +286,11 @@ def karneval(wiki_dates):
         for name, off in [("Weiberfastnacht", -6), ("Karnevalssonntag", -3),
                           ("Rosenmontag", -2), ("Veilchendienstag", -1)]:
             rows.append({"datum": (asch + timedelta(days=off)).isoformat(), "name": name,
-                         "kategorie": "karneval", "uhrzeit": "", "ort": "Köln", "liga": "",
-                         "ist_gesetzlicher_feiertag": False, "beendet": None, "quelle": q})
+                         "kategorie": "karneval", "uhrzeit": "", "ort": "Köln",
+                         "ist_gesetzlicher_feiertag": False, "quelle": q})
         rows.append({"datum": date(y, 11, 11).isoformat(), "name": "Sessionseröffnung (11.11.)",
-                     "kategorie": "karneval", "uhrzeit": "11:11", "ort": "Köln", "liga": "",
-                     "ist_gesetzlicher_feiertag": False, "beendet": None, "quelle": "festes Datum"})
+                     "kategorie": "karneval", "uhrzeit": "11:11", "ort": "Köln",
+                     "ist_gesetzlicher_feiertag": False, "quelle": "festes Datum"})
     df = pd.DataFrame(rows)
     return df[(df.datum >= START.isoformat()) & (df.datum <= END.isoformat())]
 
@@ -339,10 +324,6 @@ def build_kalender(fe, ferien, events):
     kv = events[events.kategorie == "karneval"].groupby("datum")["name"].agg(" / ".join)
     k["karneval_koeln"] = k.datum.map(kv).fillna("")
     k["ist_karneval_koeln"] = k.karneval_koeln != ""
-    fc = events[events.kategorie == "fussball"].set_index("datum")
-    k["ist_fc_heimspiel"] = k.datum.isin(fc.index)
-    k["fc_anstoss"] = k.datum.map(fc["uhrzeit"]).fillna("")
-    k["fc_gegner"] = k.datum.map(fc["name"].str.replace("Heimspiel 1. FC Köln – ", "", regex=False)).fillna("")
     return k
 
 
@@ -354,7 +335,7 @@ def main():
     fe = build_feiertage(regeln, wiki_dates, revid)
     probleme, n_pk, n_api = crosscheck(fe)
     ferien, ferien_diff = fetch_schulferien()
-    events = pd.concat([karneval(wiki_dates), fetch_fc_heimspiele()]).sort_values("datum").reset_index(drop=True)
+    events = karneval(wiki_dates).sort_values("datum").reset_index(drop=True)
     kal = build_kalender(fe, ferien, events)
 
     fe.to_csv(OUT_FEIERTAGE, index=False)
@@ -383,9 +364,7 @@ def main():
           f"Lücken: {len(pd.date_range(START, END)) - len(kal)}, Duplikate: {kal.datum.duplicated().sum()}")
     print(f"  NRW-Feiertage: {kal.ist_feiertag_nrw.sum()}, davon am Wochenende: "
           f"{(kal.ist_feiertag_nrw & kal.ist_wochenende).sum()}, Brückentage: {kal.ist_brueckentag_nrw.sum()}")
-    print(f"  Schulferientage NRW: {kal.ist_schulferien_nrw.sum()}, Karnevalstage: {kal.ist_karneval_koeln.sum()}, "
-          f"FC-Heimspieltage: {kal.ist_fc_heimspiel.sum()} (davon noch nicht gespielt: "
-          f"{(events.beendet == False).sum()})")
+    print(f"  Schulferientage NRW: {kal.ist_schulferien_nrw.sum()}, Karnevalstage: {kal.ist_karneval_koeln.sum()}")
     print(f"Events: {len(events)} Zeilen, Schulferien: {len(ferien)} Zeiträume, "
           f"Abweichungen Schulministerium vs. OpenHolidays: {ferien_diff or 'keine'}")
 
