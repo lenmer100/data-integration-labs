@@ -1,17 +1,181 @@
 # Lab 3 · Git auf meinem Rechner (Tasks 2–4)
 
-<!-- Die Abschnitte "Step by step" und "Undo" sind mit echten Befehlen und Ausgaben entstanden (siehe AI_USAGE.md). Der Abschnitt "Setup" wird nach dem Klonen und Pushen vom eigenen Rechner ausgefüllt. -->
+Die Abschnitte *Step by step* und *Undo* stammen aus den echten Befehlen, mit denen die Dateien in `labs/03` entstanden sind (siehe `AI_USAGE.md`). Den Abschnitt *Setup* habe ich am 12.11.2026 (Europe/Berlin) nach `git clone` auf meinem MacBook ausgefüllt. Die Ausgaben von `git status` vor und nach dem ersten Push von diesem Rechner stehen am Ende von *Setup* und stammen aus genau diesem Push.
 
 ## Setup
 
-<!-- TODO Lennart, nach `git clone` und dem ersten `git push` auf dem Mac (Befehle in ANLEITUNG.md, Schritt "Lab 3 · Task 2"):
-1. Ausgaben von ls -a, git status, git remote -v und git log --oneline hier einfügen.
-2. Wie viele Commits, und wo sind sie entstanden? (git log --oneline | wc -l)
-3. Welche Messages hat GitHub geschrieben (z. B. "Create README.md", "Add files via upload")? Zwei davon umformulieren, nur hier, Geschichte nicht ändern.
-4. git log --format="%h %ae %s" | head: Welche E-Mail tragen die Commits? Was ändert "Keep my email addresses private", was nicht?
-5. git log --name-only --format="" | sort | uniq -c | sort -rn | head
-6. git status vor und nach git push hier einfügen. Ist dein Avatar neben dem Commit auf GitHub?
--->
+Zuerst die fünf Einstellungen aus der Aufgabe, weil `~/.gitconfig` auf diesem Mac noch nicht existierte:
+
+```text
+$ git config --global user.name "Lennart Merschel"
+$ git config --global user.email "248039784+lenmer100@users.noreply.github.com"
+$ git config --global init.defaultBranch main
+$ git config --global pull.rebase false
+$ git config --global core.editor "code --wait"
+$ git config --global --list
+user.name=Lennart Merschel
+user.email=248039784+lenmer100@users.noreply.github.com
+init.defaultbranch=main
+pull.rebase=false
+core.editor=code --wait
+```
+
+`gh auth status` zeigte, dass ich bereits als `lenmer100` per HTTPS (keyring, Scope `repo`) angemeldet war. Danach der Klon:
+
+```text
+$ cd ~
+$ git clone https://github.com/lenmer100/data-integration-labs.git Documents/data-integration-labs
+$ cd Documents/data-integration-labs
+```
+
+```text
+$ ls -a
+.
+..
+.git
+.gitignore
+AI_USAGE.md
+LICENSE
+README.md
+labs
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+
+$ git remote -v
+origin	https://github.com/lenmer100/data-integration-labs.git (fetch)
+origin	https://github.com/lenmer100/data-integration-labs.git (push)
+
+$ git log --oneline
+59a6ad0 Record the GitHub licence API value MIT for this repository
+ef57fa1 Remove FC home matches from the Feiertage data because of the ODbL licence
+d19b87b Lab 3: read the history of datasets/co2-ppm (Task 6)
+bd2fb93 Lab 3: document step-by-step commits and the undo commands (Tasks 3-4)
+87ae13b Lab 3: document the merge conflict in countries.csv (Task 5)
+6bcc26e Merge branch 'feature/new-names'
+e5f0779 Add ISO numeric codes to the country table
+2bbc523 Use the current short names of four countries
+19a7473 Add ISO alpha-2 codes to the country table
+1624312 Add country mapping table with ISO alpha-3 codes
+ac84b73 Revert "Download the school holidays for 2027"
+05b5024 Download the school holidays for 2027
+b506d4f Say that only the script is in the repository
+68dc856 Explain how to rebuild data/raw/ in labs/03
+4aa39a3 Print a checksum of each download
+709c282 Explain how to run the script and save its output
+3593005 Keep raw downloads out of Git
+c257cfd Copy the download script from lab 2
+4c80b82 Lab 3: add predictions and answers for the commit graph (Task 1)
+6b1ece6 Lab 2: decide which agent commands to approve (Task 5)
+2362a41 Lab 2: add download script for the Feiertage raw data and its output (Task 4)
+31246aa Lab 2: mine the journal articles with pipes (Task 3)
+c0c376f Log where an AI assistant helped (draft to confirm)
+9734c86 Expand README with links, table of labs and licence section
+d3f1102 Lab 1: profile the Feiertage dataset (Tasks 5-8)
+185043f Lab 1: add Feiertage script and derived tables
+0addfc3 Lab 1: look inside pandas (Task 4)
+f0ecf10 Lab 1: add Markdown cheat sheet (Task 3)
+e32a10e Ignore virtual environments, raw data and macOS files
+c7a0ce0 Add MIT licence so that others may reuse my code
+abc6834 Create README with a one-sentence description
+```
+
+**Wie viele Commits, und wo sind sie entstanden?** 31 Commits, alle schon auf `origin/main`, alle mit der noreply-Adresse. Diesen Klon habe ich am 12.11.2026 zum ersten Mal auf diesem MacBook angelegt; die früheren Commits entstanden nicht in dieser Arbeitskopie, sondern wurden zuvor nach GitHub gepusht.
+
+**Welche Messages hat GitHub geschrieben?** Typische GitHub-UI-Messages wie *Add files via upload* oder *Create README.md* kommen in diesem Log **nicht** vor. Die frühen Messages sind schon formuliert, zwei davon würde ich heute so umschreiben (nur hier, die Geschichte bleibt unverändert):
+
+| Commit | aktuelle Message | bessere Message |
+| --- | --- | --- |
+| `abc6834` | Create README with a one-sentence description | Add a short README that states this repository collects the Data Integration labs. |
+| `c0c376f` | Log where an AI assistant helped (draft to confirm) | Start AI_USAGE.md so later labs can record where an assistant helped. |
+
+**Welche E-Mail tragen die Commits?**
+
+```text
+$ git log --format="%h %ae %s" | head
+59a6ad0 248039784+lenmer100@users.noreply.github.com Record the GitHub licence API value MIT for this repository
+ef57fa1 248039784+lenmer100@users.noreply.github.com Remove FC home matches from the Feiertage data because of the ODbL licence
+d19b87b 248039784+lenmer100@users.noreply.github.com Lab 3: read the history of datasets/co2-ppm (Task 6)
+bd2fb93 248039784+lenmer100@users.noreply.github.com Lab 3: document step-by-step commits and the undo commands (Tasks 3-4)
+87ae13b 248039784+lenmer100@users.noreply.github.com Lab 3: document the merge conflict in countries.csv (Task 5)
+6bcc26e 248039784+lenmer100@users.noreply.github.com Merge branch 'feature/new-names'
+e5f0779 248039784+lenmer100@users.noreply.github.com Add ISO numeric codes to the country table
+2bbc523 248039784+lenmer100@users.noreply.github.com Use the current short names of four countries
+19a7473 248039784+lenmer100@users.noreply.github.com Add ISO alpha-2 codes to the country table
+1624312 248039784+lenmer100@users.noreply.github.com Add country mapping table with ISO alpha-3 codes
+```
+
+Alle 31 Commits tragen `248039784+lenmer100@users.noreply.github.com`. Schritt 1 (E-Mail privat halten und Pushes blocken, die eine private Adresse veröffentlichen) sorgt dafür, dass neue Commits mit dem Profil verknüpft werden, ohne eine private Adresse zu zeigen, und dass GitHub einen Push mit einer gesperrten privaten Adresse ablehnt. Es **ändert nicht** die E-Mail-Adressen, die schon in der veröffentlichten Geschichte stehen.
+
+**Welche Dateien habe ich am häufigsten geändert?**
+
+```text
+$ git log --name-only --format="" | sort | uniq -c | sort -rn | head
+   5 labs/03/get_data.sh
+   4 labs/03/countries.csv
+   3 README.md
+   2 labs/03/README.md
+   2 labs/01/open-source.md
+   2 labs/01/feiertage/run_log.txt
+   2 labs/01/feiertage/kalender_koeln_2024-07-01_2027-12-31.csv
+   2 labs/01/feiertage/get_feiertage.py
+   2 labs/01/feiertage/events_koeln_2024-2027.csv
+   2 labs/01/feiertage/README.md
+```
+
+Am häufigsten geändert: das Download-Skript in Lab 3 und die Ländertabelle, danach das README.
+
+### Erster Commit und Push von diesem Rechner
+
+Zuerst habe ich `labs/02/shell.md` und `labs/02/bashcrawl.log` als eigenen Commit (`7813dd7`) gepusht. Der erste Lab-3-Commit von diesem Rechner ist `6f55183` (*Lab 3: add the commit graph image and answers from a local Git replay (Task 1)*), mit `graph.md` und `git-graph.png`. `git.md`, `team.md` und `AI_USAGE.md` waren zu diesem Zeitpunkt noch nicht mit committed, deshalb erscheinen sie unten noch als uncommitted.
+
+Vor dem Push von `6f55183`:
+
+```text
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   AI_USAGE.md
+	modified:   labs/03/git.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	labs/03/team.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+$ git push
+```
+
+Nach dem Push:
+
+```text
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   AI_USAGE.md
+	modified:   labs/03/git.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	labs/03/team.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+**Ist mein Avatar neben dem Commit auf GitHub?** Ja: Der Commit `6f55183` ist über die noreply-Adresse mit dem Konto [lenmer100](https://github.com/lenmer100) verknüpft (`author.login` in der GitHub-API). Damit erscheint der Avatar des Profils neben dem Commit.
 
 ## Step by step
 
