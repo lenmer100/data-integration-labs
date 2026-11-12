@@ -2,7 +2,8 @@
 # get_data.sh: lädt die Rohdaten für mein Feiertags-Profil (Lab 1, dataset.md)
 # herunter und zeigt einen ersten Blick darauf.
 #
-# Aufruf:  ./get_data.sh          (legt data/raw/ an, falls es fehlt)
+# Aufruf:  ./get_data.sh          (im Ordner des Skripts; legt data/raw/ an, falls es fehlt)
+#          ./get_data.sh > get_data.txt   speichert den ersten Blick in einer Datei
 #
 # Quelle 1 (Hauptquelle):
 #   "Feiertag (Deutschland)", Version 271794065 vom 01.11.2026, Autor:innen der
