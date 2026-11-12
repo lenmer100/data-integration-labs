@@ -1,12 +1,12 @@
 # Lab 3 · Task 7: Unsere Roadmap über Pull Requests
 
-Stand: 12.11.2026, 19:37 Europe/Berlin, im Team-Repository [dis-bahn-wetter/bahn-wetter](https://github.com/dis-bahn-wetter/bahn-wetter).
+Stand: 12.11.2026, 21:25 Europe/Berlin, im Team-Repository [dis-bahn-wetter/bahn-wetter](https://github.com/dis-bahn-wetter/bahn-wetter).
 
 | Was | Link |
 | --- | --- |
 | mein Issue | https://github.com/dis-bahn-wetter/bahn-wetter/issues/19 |
-| mein Pull Request | https://github.com/dis-bahn-wetter/bahn-wetter/pull/20 (offen, noch nicht gemergt: wartet auf das Review von @paulews; `main` ist geschützt) |
-| der PR, den ich reviewt habe | noch keiner — am 12.11.2026 19:37 Europe/Berlin war außer meinem eigenen PR #20 kein offener Pull Request im Team-Repo. Robels Issue [#5](https://github.com/dis-bahn-wetter/bahn-wetter/issues/5) (NRW-Schulferien) hat noch keinen PR. Sobald einer liegt, review ich ihn. |
+| mein Pull Request | https://github.com/dis-bahn-wetter/bahn-wetter/pull/20 (offen, noch nicht gemergt: wartet auf das Review von @paulews und @robelmihretab; `main` ist geschützt) |
+| der PR, den ich reviewt habe | https://github.com/dis-bahn-wetter/bahn-wetter/pull/22 (Änderungswünsche: https://github.com/dis-bahn-wetter/bahn-wetter/pull/22#pullrequestreview-5881482890) |
 
 `git log --oneline --graph -15` im Team-Repo (Klon von `main` auf meinem Mac, 12.11.2026):
 
@@ -41,7 +41,7 @@ Stand: 12.11.2026, 19:37 Europe/Berlin, im Team-Repository [dis-bahn-wetter/bahn
 | * 946322a Add project plan until the final presentation (closes #8)
 |/  
 *   97738aa Merge pull request #4 from dis-bahn-wetter/feature/3-db-verspaetungen
-|\  
+|\
 ```
 
-Mein PR #20 hängt die Feiertags-Zeile an die Tabelle *Daten* im README und nennt `Closes #19`. Ein Review-Kommentar von mir an ein Teammitglied gibt es noch nicht, weil kein fremder offener PR da war, den ich hätte lesen können. Einen Merge-Konflikt musste ich bisher nicht lösen: `main` ist seit meinem Branch nicht weitergegangen, und an derselben Stelle der Tabelle ist noch keine zweite neue Zeile gemergt worden. Falls Robels Schulferien-PR später an derselben Stelle ansetzt, löse ich den Konflikt lokal, sobald er entsteht. Als Regel haben wir uns geeinigt (und GitHub setzt sie auf `main` durch): niemand pusht direkt auf `main`; jede Änderung kommt über einen Branch und einen Pull Request, den ein Teammitglied reviewt. #20 merge ich erst, wenn ein Teammitglied ihn freigibt.
+Zu Robels PR #22 (der neuere von zwei inhaltlich gleichen PRs) habe ich am 12.11.2026 um 21:25 Europe/Berlin ein Review mit Änderungswünschen geschrieben: die Lizenz in der Tabelle soll „Datenlizenz Deutschland Namensnennung 2.0“ heißen (so steht es im Open.NRW-Datensatz), dazu ein Link zum Datensatz, `Closes #5` in der PR-Beschreibung, und das Duplikat #21 soll geschlossen werden. Meinen eigenen PR #20 habe ich nicht gemergt; er bleibt offen, bis ein Teammitglied (aktuell angefragt: Paul und Robel) ihn freigibt. Einen Merge-Konflikt gab es bisher nicht, weil weder meine Feiertags-Zeile noch Robels Schulferien-Zeile schon auf `main` liegt — sobald einer der PRs gemergt ist, entsteht an derselben Stelle der Tabelle typischerweise ein Konflikt, den ich dann lokal löse. Als Regel haben wir uns geeinigt (und GitHub setzt sie auf `main` durch): niemand pusht direkt auf `main`; jede Änderung kommt über einen Branch und einen Pull Request, den ein Teammitglied reviewt.
