@@ -1,0 +1,54 @@
+   10  cd bashcrawl-master/entrance
+   11  cat scroll
+   12  ls
+   13  cd cellar
+   14  ls
+   15  cat scroll
+   16  ls -F
+   17  alias ls='ls -F'
+   18  ls
+   19  ./treasure
+   20  export I=amulet,$I
+   21  echo $I
+   22  cd armoury
+   23  cat scroll
+   24  ls
+   25  ./treasure
+   26  export I=sword,$I
+   27  echo $I
+   28  ./potion
+   29  export HP=15
+   30  echo $HP
+   31  cd chamber
+   32  cat scroll
+   33  pwd
+   34  ls -l
+   35  cd ../../..
+   36  ls -aF
+   37  cat scrap
+   38  cd chapel
+   39  cat scroll
+   40  ls -F
+   41  ./altar
+   42  cd ..
+   43  ls -aF
+   44  cd .rift
+   45  cat scroll
+   46  ls -F
+   47  ./box
+   48  ls -F
+   49  ./armour
+   50  export I=armour,$I
+   51  cd arena
+   52  cat scroll
+   53  ls -F
+   54  cd pit
+   55  cat scroll
+   56  ls -F
+   57  echo $I
+   58  echo $HP
+   59  ./nyarlathotep
+   60  ls -F
+   61  cat end
+   62  echo $I
+   63  pwd
