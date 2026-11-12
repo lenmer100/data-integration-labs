@@ -19,7 +19,7 @@ url="https://de.wikipedia.org/w/index.php?title=Feiertag_(Deutschland)&oldid=271
 out="data/raw/wikipedia_feiertage.html"
 
 # Zweite Datei für die Anreicherung (Task 8 in Lab 1)
-url2="https://www.schulministerium.nrw.de/BiPo/OpenData/Schuldaten/Schulferien/OpenData_Ferientermine.csv"
+url2="https://www.schulministerium.nrw.de/BiPo/OpenData/Schuldaten/Schulferien/OpenData_Ferientermine_2027.csv"
 out2="data/raw/schulferien_nrw.csv"
 
 mkdir -p data/raw
