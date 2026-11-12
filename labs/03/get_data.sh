@@ -41,6 +41,11 @@ echo "===== $out2"
 echo "== Columns";     sed -n 2p "$out2" | tr ';' '\n' | wc -l
 echo "== First lines"; head -n 3 "$out2"
 
+# Prüfsumme jeder Datei: ändert sich, sobald sich der Inhalt der Quelle ändert
+for f in "$out" "$out2"; do
+  echo "== Checksum $f"; git hash-object --no-filters "$f"
+done
+
 # Abgleich mit labs/01/dataset.md (Stand 12.11.2026):
 # - Die Wikipedia-Seite ist hier HTML (action=render). In dataset.md stehen 75.783 Bytes
 #   Wikitext, das ist die Größe des Quelltexts, nicht des gerenderten HTML. Die Zahl der
