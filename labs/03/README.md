@@ -14,7 +14,7 @@ Meine Abgabe zu [Lab 3](https://github.com/breuert/data-integration/blob/main/la
 
 ## `data/raw/` neu bauen
 
-Die Rohdaten liegen nicht im Repository. So baut man sie neu (Bash oder zsh, mit `curl`):
+Die Rohdaten liegen nicht im Repository, nur das Skript, das sie holt. So baut man sie neu (Bash oder zsh, mit `curl`):
 
 ```bash
 cd labs/03
