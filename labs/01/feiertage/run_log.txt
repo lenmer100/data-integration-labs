@@ -1,0 +1,19 @@
+Wikipedia: 'Feiertag (Deutschland)', Version 271794065 vom 2026-11-01T05:38:14Z
+
+Feiertage (alle Länder): 70 Zeilen, 70 Tage, 2024-08-08 bis 2027-12-26
+  davon NRW: 37, bundesweit: 30, regional: 40
+  Datum berechnet statt aus Wikipedia: 1
+  Duplikate (datum+name): 0, leere Zellen: 0
+  Wikipedia-Tabelle bewegliche Feiertage vs. Osterformel: 0 Abweichungen []
+Abgleich NRW: holidays-Paket 37 Tage, feiertage-api.de 37 Tage, Wikipedia 37 Tage
+  Abweichungen: 
+   - holidays-Paket HE weicht ab: 2025-04-20 (nur Wikipedia)
+   - holidays-Paket HE weicht ab: 2025-06-08 (nur Wikipedia)
+   - holidays-Paket HE weicht ab: 2026-04-05 (nur Wikipedia)
+   - holidays-Paket HE weicht ab: 2026-05-24 (nur Wikipedia)
+   - holidays-Paket HE weicht ab: 2027-03-28 (nur Wikipedia)
+   - holidays-Paket HE weicht ab: 2027-05-16 (nur Wikipedia)
+Kalender: 1279 Zeilen (2024-07-01 bis 2027-12-31), Lücken: 0, Duplikate: 0
+  NRW-Feiertage: 37, davon am Wochenende: 8, Brückentage: 10
+  Schulferientage NRW: 328, Karnevalstage: 16, FC-Heimspieltage: 51 (davon noch nicht gespielt: 12)
+Events: 67 Zeilen, Schulferien: 18 Zeiträume, Abweichungen Schulministerium vs. OpenHolidays: keine

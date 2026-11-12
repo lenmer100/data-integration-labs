@@ -1,0 +1,71 @@
+datum,jahr,wochentag,name,typ,geltung,anzahl_laender,laender_landesweit,laender_teilweise,is_nrw,datum_quelle,wiki_revid
+2024-08-08,2024,Do,Friedensfest Augsburg,fest,regional,0,,BY,False,wikipedia,271794065
+2024-08-15,2024,Do,Mariä Himmelfahrt,fest,regional,1,SL,BY,False,wikipedia,271794065
+2024-09-20,2024,Fr,Weltkindertag,fest,regional,1,TH,,False,wikipedia,271794065
+2024-10-03,2024,Do,Tag der Deutschen Einheit,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2024-10-31,2024,Do,Reformationstag/-fest,fest,regional,9,BB;HB;HH;MV;NI;SH;SN;ST;TH,,False,wikipedia,271794065
+2024-11-01,2024,Fr,Allerheiligen,fest,regional,5,BW;BY;NW;RP;SL,,True,wikipedia,271794065
+2024-11-20,2024,Mi,Buß- und Bettag,beweglich,regional,1,SN,,False,berechnet,271794065
+2024-12-25,2024,Mi,1. Weihnachtsfeiertag,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2024-12-26,2024,Do,2. Weihnachtsfeiertag,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2025-01-01,2025,Mi,Neujahr,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2025-01-06,2025,Mo,Heilige Drei Könige,fest,regional,3,BW;BY;ST,,False,wikipedia,271794065
+2025-03-08,2025,Sa,Internationaler Frauentag,fest,regional,2,BE;MV,,False,wikipedia,271794065
+2025-04-18,2025,Fr,Karfreitag,beweglich,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2025-04-20,2025,So,Ostersonntag,beweglich,regional,2,BB;HE,,False,wikipedia,271794065
+2025-04-21,2025,Mo,Ostermontag,beweglich,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2025-05-01,2025,Do,"Erster Mai, Tag der Arbeit",fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2025-05-08,2025,Do,Tag der Befreiung,fest,regional,1,BE,,False,wikipedia,271794065
+2025-05-29,2025,Do,Christi Himmelfahrt,beweglich,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2025-06-08,2025,So,Pfingstsonntag,beweglich,regional,2,BB;HE,,False,wikipedia,271794065
+2025-06-09,2025,Mo,Pfingstmontag,beweglich,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2025-06-19,2025,Do,Fronleichnam,beweglich,regional,6,BW;BY;HE;NW;RP;SL,SN;TH,True,wikipedia,271794065
+2025-08-08,2025,Fr,Friedensfest Augsburg,fest,regional,0,,BY,False,wikipedia,271794065
+2025-08-15,2025,Fr,Mariä Himmelfahrt,fest,regional,1,SL,BY,False,wikipedia,271794065
+2025-09-20,2025,Sa,Weltkindertag,fest,regional,1,TH,,False,wikipedia,271794065
+2025-10-03,2025,Fr,Tag der Deutschen Einheit,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2025-10-31,2025,Fr,Reformationstag/-fest,fest,regional,9,BB;HB;HH;MV;NI;SH;SN;ST;TH,,False,wikipedia,271794065
+2025-11-01,2025,Sa,Allerheiligen,fest,regional,5,BW;BY;NW;RP;SL,,True,wikipedia,271794065
+2025-11-19,2025,Mi,Buß- und Bettag,beweglich,regional,1,SN,,False,wikipedia,271794065
+2025-12-25,2025,Do,1. Weihnachtsfeiertag,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2025-12-26,2025,Fr,2. Weihnachtsfeiertag,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2026-01-01,2026,Do,Neujahr,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2026-01-06,2026,Di,Heilige Drei Könige,fest,regional,3,BW;BY;ST,,False,wikipedia,271794065
+2026-03-08,2026,So,Internationaler Frauentag,fest,regional,2,BE;MV,,False,wikipedia,271794065
+2026-04-03,2026,Fr,Karfreitag,beweglich,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2026-04-05,2026,So,Ostersonntag,beweglich,regional,2,BB;HE,,False,wikipedia,271794065
+2026-04-06,2026,Mo,Ostermontag,beweglich,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2026-05-01,2026,Fr,"Erster Mai, Tag der Arbeit",fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2026-05-14,2026,Do,Christi Himmelfahrt,beweglich,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2026-05-24,2026,So,Pfingstsonntag,beweglich,regional,2,BB;HE,,False,wikipedia,271794065
+2026-05-25,2026,Mo,Pfingstmontag,beweglich,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2026-06-04,2026,Do,Fronleichnam,beweglich,regional,6,BW;BY;HE;NW;RP;SL,SN;TH,True,wikipedia,271794065
+2026-08-08,2026,Sa,Friedensfest Augsburg,fest,regional,0,,BY,False,wikipedia,271794065
+2026-08-15,2026,Sa,Mariä Himmelfahrt,fest,regional,1,SL,BY,False,wikipedia,271794065
+2026-09-20,2026,So,Weltkindertag,fest,regional,1,TH,,False,wikipedia,271794065
+2026-10-03,2026,Sa,Tag der Deutschen Einheit,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2026-10-31,2026,Sa,Reformationstag/-fest,fest,regional,9,BB;HB;HH;MV;NI;SH;SN;ST;TH,,False,wikipedia,271794065
+2026-11-01,2026,So,Allerheiligen,fest,regional,5,BW;BY;NW;RP;SL,,True,wikipedia,271794065
+2026-11-18,2026,Mi,Buß- und Bettag,beweglich,regional,1,SN,,False,wikipedia,271794065
+2026-12-25,2026,Fr,1. Weihnachtsfeiertag,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2026-12-26,2026,Sa,2. Weihnachtsfeiertag,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2027-01-01,2027,Fr,Neujahr,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2027-01-06,2027,Mi,Heilige Drei Könige,fest,regional,3,BW;BY;ST,,False,wikipedia,271794065
+2027-03-08,2027,Mo,Internationaler Frauentag,fest,regional,2,BE;MV,,False,wikipedia,271794065
+2027-03-26,2027,Fr,Karfreitag,beweglich,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2027-03-28,2027,So,Ostersonntag,beweglich,regional,2,BB;HE,,False,wikipedia,271794065
+2027-03-29,2027,Mo,Ostermontag,beweglich,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2027-05-01,2027,Sa,"Erster Mai, Tag der Arbeit",fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2027-05-06,2027,Do,Christi Himmelfahrt,beweglich,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2027-05-16,2027,So,Pfingstsonntag,beweglich,regional,2,BB;HE,,False,wikipedia,271794065
+2027-05-17,2027,Mo,Pfingstmontag,beweglich,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2027-05-27,2027,Do,Fronleichnam,beweglich,regional,6,BW;BY;HE;NW;RP;SL,SN;TH,True,wikipedia,271794065
+2027-08-08,2027,So,Friedensfest Augsburg,fest,regional,0,,BY,False,wikipedia,271794065
+2027-08-15,2027,So,Mariä Himmelfahrt,fest,regional,1,SL,BY,False,wikipedia,271794065
+2027-09-20,2027,Mo,Weltkindertag,fest,regional,1,TH,,False,wikipedia,271794065
+2027-10-03,2027,So,Tag der Deutschen Einheit,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2027-10-31,2027,So,Reformationstag/-fest,fest,regional,9,BB;HB;HH;MV;NI;SH;SN;ST;TH,,False,wikipedia,271794065
+2027-11-01,2027,Mo,Allerheiligen,fest,regional,5,BW;BY;NW;RP;SL,,True,wikipedia,271794065
+2027-11-17,2027,Mi,Buß- und Bettag,beweglich,regional,1,SN,,False,wikipedia,271794065
+2027-12-25,2027,Sa,1. Weihnachtsfeiertag,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
+2027-12-26,2027,So,2. Weihnachtsfeiertag,fest,bundesweit,16,BB;BE;BW;BY;HB;HE;HH;MV;NI;NW;RP;SH;SL;SN;ST;TH,,True,wikipedia,271794065
