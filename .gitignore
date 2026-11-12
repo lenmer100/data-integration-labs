@@ -1,0 +1,16 @@
+# macOS
+.DS_Store
+
+# Python
+.venv/
+__pycache__/
+
+# Rohdaten und heruntergeladene Lehrmaterialien gehören nicht ins Repo
+labs/01/feiertage/raw/
+labs/01/feiertage/*.parquet
+labs/02/data/
+labs/02/shell-lesson/
+labs/02/bashcrawl-master/
+labs/02/sandbox/
+labs/02/*.zip
+labs/02/history.txt
