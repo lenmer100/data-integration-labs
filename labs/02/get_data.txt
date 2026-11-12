@@ -1,0 +1,21 @@
+===== data/raw/wikipedia_feiertage.html
+== Size
+-rw-r--r-- 1 <user> <user> 383K Nov 12 12:09 data/raw/wikipedia_feiertage.html
+== Type
+data/raw/wikipedia_feiertage.html: HTML document, Unicode text, UTF-8 text, with very long lines (19301)
+== Lines
+913
+===== data/raw/schulferien_nrw.csv
+== Size
+-rw-r--r-- 1 <user> <user> 3.6K Nov 12 12:09 data/raw/schulferien_nrw.csv
+== Type
+data/raw/schulferien_nrw.csv: ASCII text
+== Lines
+59
+===== data/raw/schulferien_nrw.csv
+== Columns
+6
+== First lines
+sep=;
+Schuljahr;FerienID;ErsterTagDate;LetzterTagDate;ErsterTagSort;LetzterTagSort
+"2018/19";"1";"16.07.2018";"28.08.2018";"20180716";"20180828";
